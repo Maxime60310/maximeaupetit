@@ -8,29 +8,63 @@
 
 	let isSubmitting = false;
 	let submitMessage = '';
+	let errorMessage = '';
+	let fieldErrors: Record<string, string> = {};
 
-	function handleSubmit(event: Event) {
+	async function handleSubmit(event: Event) {
 		event.preventDefault();
 		isSubmitting = true;
+		submitMessage = '';
+		errorMessage = '';
+		fieldErrors = {};
 
-		// Simulate form submission
-		setTimeout(() => {
+		try {
+			const response = await fetch('http://sendmail.maximeaupetit.fr', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({
+					nom_complet: formData.name,
+					email: formData.email,
+					sujet: formData.subject,
+					message: formData.message
+				})
+			});
+
+			const result = await response.json();
+
+			if (result.success) {
+				// Succès
+				submitMessage = 'Merci pour votre message ! Je vous répondrai dans les plus brefs délais.';
+
+				// Reset form
+				formData = {
+					name: '',
+					email: '',
+					subject: '',
+					message: ''
+				};
+
+				// Clear success message after 5 seconds
+				setTimeout(() => {
+					submitMessage = '';
+				}, 5000);
+			} else {
+				// Erreur avec détails
+				if (result.details && typeof result.details === 'object') {
+					fieldErrors = result.details;
+				} else {
+					errorMessage = result.error || "Une erreur est survenue lors de l'envoi du message.";
+				}
+			}
+		} catch (error) {
+			console.error('Erreur réseau:', error);
+			errorMessage =
+				'Erreur de connexion. Veuillez vérifier votre connexion internet et réessayer.';
+		} finally {
 			isSubmitting = false;
-			submitMessage = 'Merci pour votre message ! Je vous répondrai dans les plus brefs délais.';
-
-			// Reset form
-			formData = {
-				name: '',
-				email: '',
-				subject: '',
-				message: ''
-			};
-
-			// Clear message after 5 seconds
-			setTimeout(() => {
-				submitMessage = '';
-			}, 5000);
-		}, 1000);
+		}
 	}
 </script>
 
@@ -103,7 +137,7 @@
 				</div>
 			</div>
 
-			<!-- <div class="contact-form-container">
+			<div class="contact-form-container">
 				<form class="contact-form card" on:submit={handleSubmit}>
 					<h3>Envoyez-moi un message</h3>
 
@@ -113,16 +147,25 @@
 						</div>
 					{/if}
 
+					{#if errorMessage}
+						<div class="error-message">
+							{errorMessage}
+						</div>
+					{/if}
+
 					<div class="form-group">
 						<label for="name">Nom complet</label>
 						<input
 							type="text"
 							id="name"
 							bind:value={formData.name}
-							class="form-field"
+							class="form-field {fieldErrors.nom_complet ? 'error' : ''}"
 							placeholder="Votre nom complet"
 							required
 						/>
+						{#if fieldErrors.nom_complet}
+							<div class="field-error">{fieldErrors.nom_complet}</div>
+						{/if}
 					</div>
 
 					<div class="form-group">
@@ -131,21 +174,32 @@
 							type="email"
 							id="email"
 							bind:value={formData.email}
-							class="form-field"
+							class="form-field {fieldErrors.email ? 'error' : ''}"
 							placeholder="votre@email.com"
 							required
 						/>
+						{#if fieldErrors.email}
+							<div class="field-error">{fieldErrors.email}</div>
+						{/if}
 					</div>
 
 					<div class="form-group">
 						<label for="subject">Sujet</label>
-						<select id="subject" bind:value={formData.subject} class="form-field" required>
+						<select
+							id="subject"
+							bind:value={formData.subject}
+							class="form-field {fieldErrors.sujet ? 'error' : ''}"
+							required
+						>
 							<option value="">Sélectionnez un sujet</option>
 							<option value="projet">Nouveau projet</option>
 							<option value="emploi">Opportunité d'emploi</option>
 							<option value="collaboration">Collaboration</option>
 							<option value="autre">Autre</option>
 						</select>
+						{#if fieldErrors.sujet}
+							<div class="field-error">{fieldErrors.sujet}</div>
+						{/if}
 					</div>
 
 					<div class="form-group">
@@ -153,11 +207,14 @@
 						<textarea
 							id="message"
 							bind:value={formData.message}
-							class="form-field"
+							class="form-field {fieldErrors.message ? 'error' : ''}"
 							placeholder="Décrivez votre projet ou votre demande..."
 							rows="5"
 							required
 						></textarea>
+						{#if fieldErrors.message}
+							<div class="field-error">{fieldErrors.message}</div>
+						{/if}
 					</div>
 
 					<button type="submit" class="btn submit-btn" disabled={isSubmitting}>
@@ -168,7 +225,7 @@
 						{/if}
 					</button>
 				</form>
-			</div> -->
+			</div>
 		</div>
 	</div>
 </section>
@@ -257,7 +314,7 @@
 		font-size: 0.9rem;
 	}
 
-	/* .contact-form {
+	.contact-form {
 		height: fit-content;
 	}
 
@@ -325,7 +382,29 @@
 		border-radius: 6px;
 		margin-bottom: 1.5rem;
 		font-size: 0.95rem;
-	} */
+	}
+
+	.error-message {
+		background: rgba(231, 76, 60, 0.1);
+		border: 1px solid #e74c3c;
+		color: #e74c3c;
+		padding: 1rem;
+		border-radius: 6px;
+		margin-bottom: 1.5rem;
+		font-size: 0.95rem;
+	}
+
+	.form-field.error {
+		border-color: #e74c3c;
+		box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+	}
+
+	.field-error {
+		color: #e74c3c;
+		font-size: 0.85rem;
+		margin-top: 0.5rem;
+		display: block;
+	}
 
 	@media (max-width: 768px) {
 		.contact-content {

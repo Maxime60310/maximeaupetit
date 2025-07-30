@@ -7,7 +7,7 @@
 			<div class="project-card card">
 				<div class="project-image">
 					<div class="project-placeholder">
-						<span class="project-icon">🌐</span>
+						<img src="/images/laMeute.jpg" alt="La Meute de Jean-Eude" />
 					</div>
 					<div class="project-overlay">
 						<div class="project-links">
@@ -15,7 +15,7 @@
 								<span class="link-icon">👁️</span>
 								Voir le projet
 							</a>
-							<a href="#" class="project-link">
+							<a href="https://github.com/Maxime60310/lameute" target="_blank" class="project-link">
 								<span class="link-icon">💻</span>
 								Code source
 							</a>
@@ -24,7 +24,10 @@
 				</div>
 				<div class="project-content">
 					<h3>La Meute de Jean-Eude</h3>
-					<p>Site web test pour un éducateur-comportementaliste canin, effectué dans le cadre de ma formation de développeur Web/web mobile en 2024.</p>
+					<p>
+						Site web test pour un éducateur-comportementaliste canin, inscription / prise de
+						rendez-vous / Gestion des chiens.
+					</p>
 					<div class="project-tech">
 						<span class="tech-tag">Sveltekit</span>
 						<span class="tech-tag">TypeScript</span>
@@ -36,15 +39,19 @@
 			<div class="project-card card">
 				<div class="project-image">
 					<div class="project-placeholder">
-						<span class="project-icon">📱</span>
+						<img src="/images/sophrologie.jpg" alt="Delphine Sophrologie" />
 					</div>
 					<div class="project-overlay">
 						<div class="project-links">
-							<a href="#" class="project-link">
+							<a href="https://delphinesophrologie.com/" target="_blank" class="project-link">
 								<span class="link-icon">👁️</span>
 								Voir le projet
 							</a>
-							<a href="#" class="project-link">
+							<a
+								href="https://github.com/seekode/delphinesophrologie"
+								target="_blank"
+								class="project-link"
+							>
 								<span class="link-icon">💻</span>
 								Code source
 							</a>
@@ -54,15 +61,13 @@
 				<div class="project-content">
 					<h3>Delphine Sophrologie</h3>
 					<p>
-						Site web pour une sophrologue, avec implémentation de boutique en ligne et de blog. Réalisé en collaboration avec Seekode.
+						Site web pour une sophrologue, avec implémentation de boutique en ligne et de blog.
+						Réalisé en collaboration avec Seekode.
 					</p>
-					<div class="project-tech">	
+					<div class="project-tech">
 						<span class="tech-tag">SvelteKit</span>
-						<span class="tech-tag">TypeScript</span>
-						<span class="tech-tag">Scss</span>
-						<span class="tech-tag">MySQL</span>
 						<span class="tech-tag">PHP</span>
-						<span class="tech-tag">API</span>
+						<span class="tech-tag">MySQL</span>
 					</div>
 				</div>
 			</div>
@@ -70,15 +75,19 @@
 			<div class="project-card card">
 				<div class="project-image">
 					<div class="project-placeholder">
-						<span class="project-icon">🔗</span>
+						<img src="/images/octographisme.jpg" alt="Octographisme" />
 					</div>
 					<div class="project-overlay">
 						<div class="project-links">
-							<a href="#" class="project-link">
+							<a href="https://octographisme.fr/" target="_blank" class="project-link">
 								<span class="link-icon">👁️</span>
 								Voir le projet
 							</a>
-							<a href="#" class="project-link">
+							<a
+								href="https://github.com/seekode/octographisme.git"
+								target="_blank"
+								class="project-link"
+							>
 								<span class="link-icon">💻</span>
 								Code source
 							</a>
@@ -87,9 +96,8 @@
 				</div>
 				<div class="project-content">
 					<h3>Octographism</h3>
-					<p>
-						Site vitrine pour un graphiste, réalisé en collaboration avec Seekode.
-					</p>
+					<p>Site vitrine pour un graphiste, réalisé en collaboration avec Seekode.</p>
+					<p></p>
 					<div class="project-tech">
 						<span class="tech-tag">SvelteKit</span>
 						<span class="tech-tag">TypeScript</span>
@@ -97,108 +105,7 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="project-card card">
-				<div class="project-image">
-					<div class="project-placeholder">
-						<span class="project-icon">🎨</span>
-					</div>
-					<div class="project-overlay">
-						<div class="project-links">
-							<a href="#" class="project-link">
-								<span class="link-icon">👁️</span>
-								Voir le projet
-							</a>
-							<a href="#" class="project-link">
-								<span class="link-icon">💻</span>
-								Code source
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="project-content">
-					<h3>Portfolio Créatif</h3>
-					<p>
-						Site vitrine avec animations fluides et design moderne pour présenter des créations
-						artistiques.
-					</p>
-					<div class="project-tech">
-						<span class="tech-tag">Vue.js</span>
-						<span class="tech-tag">CSS</span>
-						<span class="tech-tag">JavaScript</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="project-card card">
-				<div class="project-image">
-					<div class="project-placeholder">
-						<span class="project-icon">📊</span>
-					</div>
-					<div class="project-overlay">
-						<div class="project-links">
-							<a href="#" class="project-link">
-								<span class="link-icon">👁️</span>
-								Voir le projet
-							</a>
-							<a href="#" class="project-link">
-								<span class="link-icon">💻</span>
-								Code source
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="project-content">
-					<h3>Dashboard Analytics</h3>
-					<p>
-						Interface d'administration avec graphiques interactifs et gestion des données en temps
-						réel.
-					</p>
-					<div class="project-tech">
-						<span class="tech-tag">React</span>
-						<span class="tech-tag">Node.js</span>
-						<span class="tech-tag">Chart.js</span>
-					</div>
-				</div>
-			</div>
-
-			<div class="project-card card">
-				<div class="project-image">
-					<div class="project-placeholder">
-						<span class="project-icon">🤖</span>
-					</div>
-					<div class="project-overlay">
-						<div class="project-links">
-							<a href="#" class="project-link">
-								<span class="link-icon">👁️</span>
-								Voir le projet
-							</a>
-							<a href="#" class="project-link">
-								<span class="link-icon">💻</span>
-								Code source
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="project-content">
-					<h3>Assistant IA</h3>
-					<p>
-						Application intégrant l'intelligence artificielle pour automatiser des tâches et
-						améliorer l'expérience utilisateur.
-					</p>
-					<div class="project-tech">
-						<span class="tech-tag">TypeScript</span>
-						<span class="tech-tag">OpenAI</span>
-						<span class="tech-tag">Express</span>
-					</div>
-				</div>
-			</div> -->
 		</div>
-
-		<!-- <div class="projects-cta">
-			<p>Vous avez un projet en tête ?</p>
-			<a href="#contact" class="btn">Discutons-en ensemble</a>
-		</div> -->
 	</div>
 </section>
 
@@ -235,9 +142,12 @@
 		position: relative;
 	}
 
-	.project-icon {
-		font-size: 3rem;
-		color: #3fa38e;
+	.project-card img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.5;
+		filter: hue-rotate(15deg);
 	}
 
 	.project-overlay {
@@ -287,7 +197,8 @@
 	}
 
 	.project-content {
-		padding: 1.5rem;
+		padding: 0.5rem;
+		padding-top: 1rem;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -322,21 +233,6 @@
 		border: 1px solid #3fa38e;
 	}
 
-	/* .projects-cta {
-		text-align: center;
-		margin-top: 4rem;
-		padding: 2rem;
-		background: #1b3d30;
-		border-radius: 12px;
-		border: 1px solid #284d3c;
-	}
-
-	.projects-cta p {
-		font-size: 1.2rem;
-		margin-bottom: 1.5rem;
-		color: #c2e4db;
-	} */
-
 	@media (max-width: 768px) {
 		.projects-grid {
 			grid-template-columns: 1fr;
@@ -349,10 +245,6 @@
 
 		.project-image {
 			height: 150px;
-		}
-
-		.project-icon {
-			font-size: 2rem;
 		}
 
 		.project-links {

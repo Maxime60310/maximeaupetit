@@ -265,15 +265,150 @@
 
 		.hero-stats {
 			justify-content: center;
+			flex-wrap: wrap;
+			gap: 1.5rem;
 		}
 
 		.hero-actions {
 			justify-content: center;
+			flex-wrap: wrap;
 		}
 
 		.code-animation {
 			font-size: 0.8rem;
 			padding: 1.5rem;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.hero {
+			padding: 4rem 0 3rem;
+		}
+
+		.hero-text h1 {
+			font-size: 2rem;
+		}
+
+		.hero-subtitle {
+			font-size: 1.1rem;
+		}
+
+		.hero-description {
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.hero-stats {
+			gap: 1rem;
+		}
+
+		.stat-item {
+			flex: 1;
+			min-width: 80px;
+		}
+
+		.stat-number {
+			font-size: 1.2rem;
+		}
+
+		.stat-label {
+			font-size: 0.8rem;
+		}
+
+		.hero-actions {
+			flex-direction: column;
+			gap: 0.75rem;
+			width: 100%;
+		}
+
+		.btn,
+		.btn-secondary {
+			width: 100%;
+			text-align: center;
+		}
+
+		.code-animation {
+			font-size: 0.75rem;
+			padding: 1rem;
+			max-width: 100%;
+		}
+
+		.code-indent {
+			padding-left: 1rem;
+		}
+	}
+
+	@media (max-width: 320px) {
+		.hero {
+			padding: 3rem 0 2rem;
+		}
+
+		.hero-content {
+			gap: 1.5rem;
+		}
+
+		.hero-text h1 {
+			font-size: 1.8rem;
+			line-height: 1.2;
+		}
+
+		.hero-subtitle {
+			font-size: 1rem;
+			margin-bottom: 1rem;
+		}
+
+		.hero-description {
+			font-size: 0.95rem;
+			line-height: 1.6;
+			margin-bottom: 1.25rem;
+		}
+
+		.hero-stats {
+			flex-direction: column;
+			gap: 0.75rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.stat-item {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-align: left;
+			padding: 0.5rem 0;
+		}
+
+		.stat-number {
+			font-size: 1.1rem;
+			margin-bottom: 0;
+		}
+
+		.stat-label {
+			font-size: 0.75rem;
+			text-align: right;
+		}
+
+		.hero-actions {
+			gap: 0.5rem;
+		}
+
+		.btn,
+		.btn-secondary {
+			padding: 0.6rem 1rem;
+			font-size: 0.9rem;
+		}
+
+		.code-animation {
+			font-size: 0.7rem;
+			padding: 0.75rem;
+			line-height: 1.4;
+		}
+
+		.code-line {
+			margin-bottom: 0.25rem;
+		}
+
+		.code-indent {
+			padding-left: 0.75rem;
 		}
 	}
 </style>
