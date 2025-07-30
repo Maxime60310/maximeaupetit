@@ -19,7 +19,7 @@
 		fieldErrors = {};
 
 		try {
-			const response = await fetch('http://sendmail.maximeaupetit.fr', {
+			const response = await fetch('http://maximeaupetit.fr/sendmail.php', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
